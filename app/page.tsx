@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-
 const experience = [
   {
     eyebrow: "2022 — Aug 2026",
@@ -133,48 +129,14 @@ function ArrowIcon() {
 }
 
 export default function Home() {
-  useEffect(() => {
-    let disposed = false;
-
-    async function initLiquidGlass() {
-      try {
-        const { default: liquidGL } = await import("liquid-gl");
-        if (disposed) return;
-
-        liquidGL({
-          target: ".liquidGL",
-          snapshot: "body",
-          resolution: 1.25,
-          refraction: 0.008,
-          aberration: 0,
-          bevelDepth: 0.052,
-          bevelWidth: 0.18,
-          frost: 1.2,
-          shadow: true,
-          specular: true,
-          reveal: "fade",
-          tilt: false,
-          magnify: 1,
-        });
-      } catch (error) {
-        console.warn("liquidGL unavailable; CSS glass fallback remains active.", error);
-      }
-    }
-
-    initLiquidGlass();
-    return () => {
-      disposed = true;
-    };
-  }, []);
-
   return (
     <main>
       <div className="spaceWash" aria-hidden="true" />
       <div className="orb orbOne" aria-hidden="true" />
       <div className="orb orbTwo" aria-hidden="true" />
 
-      <nav className="navShell liquidGL">
-        <div className="liquidContent navContent">
+      <nav className="navShell liquidGlass">
+        <div className="navContent">
           <a className="brand" href="#top" aria-label="Arturo Espinosa Vargas home">
             AEV
           </a>
@@ -238,8 +200,8 @@ export default function Home() {
 
       <div className="portfolioGrid sectionFrame">
         <aside className="sidebar">
-          <div className="contactPanel liquidGL">
-            <div className="liquidContent contactPanelContent">
+          <div className="contactPanel liquidGlass">
+            <div className="contactPanelContent">
               <p className="railEyebrow">Contact</p>
               <a className="emailLink" href="mailto:arturo.espinova@gmail.com">
                 arturo.espinova@gmail.com

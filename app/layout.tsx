@@ -14,7 +14,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* Filtro SVG global: textura de grano usada por el efecto "liquid glass" */}
+        <svg
+          width="0"
+          height="0"
+          style={{ position: "absolute", overflow: "hidden" }}
+          aria-hidden="true"
+          focusable="false"
+        >
+          <filter id="liquidGlassNoise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.85"
+              numOctaves="2"
+              stitchTiles="stitch"
+              result="noise"
+            />
+            <feColorMatrix
+              in="noise"
+              type="matrix"
+              values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.35 0"
+            />
+          </filter>
+        </svg>
+        {children}
+      </body>
     </html>
   );
 }
