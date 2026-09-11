@@ -478,7 +478,7 @@ main { position: relative; min-height: 100vh; isolation: isolate; }
   opacity: .075;
   filter: saturate(.7);
   pointer-events: none;
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
 }
 .career2 .careerHeader,
 .career2 .careerBody,

@@ -315,10 +315,26 @@ export default function Home() {
             <div className="careerMosaic">
               {experience.map((item, index) => (
                 <article className={`glassSurface careerCard career${index + 1}`} key={item.company}>
+                  {index === 0 && (
+                    <img
+                      className="unamWatermark"
+                      src="/projects/Solera-insurance.png"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  )}
                   {index === 1 && (
                     <img
                       className="unamWatermark"
                       src="/projects/unam-watermark.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  )}
+                  {index === 2 && (
+                    <img
+                      className="unamWatermark"
+                      src="/projects/bootcamp_instute.png"
                       alt=""
                       aria-hidden="true"
                     />
