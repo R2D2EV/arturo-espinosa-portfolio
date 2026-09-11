@@ -192,7 +192,7 @@ export default function Home() {
             />
             <div className="portraitCaption">
               <span>Arturo Espinosa Vargas</span>
-              <small>AI · Cloud · Software Engineering</small>
+              <small>Physicist · AI · Cloud · Software Engineering</small>
             </div>
           </div>
         </div>
