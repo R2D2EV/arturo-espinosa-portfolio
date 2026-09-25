@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ybouane/liquidglass": "^1.0.3",
     "liquid-gl": "^2.0.2",
     "next": "^16.3.4",
     "react": "^19.1.0",

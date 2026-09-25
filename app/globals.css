@@ -422,7 +422,41 @@ main { position: relative; min-height: 100vh; isolation: isolate; }
 .tagRow { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; margin-top: 23px; }
 .tagRow span, .skillCloud span { padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(53,96,81,.09); background: rgba(255,255,255,.50); color: #49635a; font-size: .68rem; font-weight: 720; }
 .projectFooter { position: relative; z-index: 1; margin-top: 25px; padding-top: 21px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 18px; color: #6f827a; font-size: .75rem; }
-.secondaryProjects { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+.secondaryProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.projectWide {
+  width: 100%;
+}
+
+.galleryProject {
+  min-height: 0;
+  padding: clamp(25px, 4vw, 44px);
+  border-radius: 32px;
+}
+
+.galleryProjectIntro {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.galleryProject h3 {
+  margin: 30px 0 12px;
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.galleryProject p {
+  max-width: 760px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
 .miniProject { border-radius: 26px; padding: 27px; min-height: 260px; display: flex; flex-direction: column; }
 .projectOrdinal { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 12px; background: rgba(255,255,255,.58); color: #527365; font-size: .72rem; font-weight: 850; }
 .miniProject h3 { position: relative; z-index: 1; margin: 28px 0 9px; font-size: 1.3rem; letter-spacing: -.025em; }
@@ -574,4 +608,360 @@ footer { width: min(1240px, calc(100% - 36px)); margin: 0 auto; padding: 38px 0 
   .contactPanelContent { grid-template-columns: 1fr; }
   .railEyebrow, .emailLink { grid-column: auto; }
   footer { width: calc(100% - 22px); flex-direction: column; }
+}
+
+/* =========================================================
+   PROJECT 03 — DEMO-STYLE LIQUID GLASS GALLERY
+   ========================================================= */
+
+.projectGallery {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectGalleryViewport {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(6, 18, 14, .98),
+      rgba(13, 28, 23, .96)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, .16);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .10),
+    0 28px 60px rgba(17, 55, 43, .15);
+}
+
+.projectGalleryViewport::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    inset 0 20px 40px rgba(255,255,255,.025);
+}
+
+.projectGalleryImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  animation:
+    gallery-image-enter
+    240ms ease-out;
+}
+
+@keyframes gallery-image-enter {
+  from {
+    opacity: 0;
+    transform: scale(.994);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Tiny LiquidGlass root
+   --------------------------------------------------------- */
+
+.galleryGlassRoot {
+  position: relative;
+
+  width: 172px;
+  height: 50px;
+
+  margin-top: 16px;
+
+  overflow: visible;
+
+  border-radius: 999px;
+
+  isolation: isolate;
+}
+
+
+/*
+LiquidGlass does not sample the root's own background.
+This scene must be a direct child so the glass has
+real luminance/lines to refract.
+*/
+.galleryGlassScene {
+  background:
+    linear-gradient(
+      135deg,
+      #f7fbf9 0%,
+      #dcebe4 48%,
+      #a7cdbd 100%
+    );
+}
+
+.sceneGlow {
+  position: absolute;
+
+  border-radius: 999px;
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.sceneGlowOne {
+  background:
+    rgba(255, 255, 255, .98);
+}
+
+.sceneGlowTwo {
+  background:
+    rgba(81, 181, 140, .40);
+}
+
+.sceneLine {
+  position: absolute;
+
+  width: 94px;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.62);
+
+  transform: rotate(-18deg);
+
+  pointer-events: none;
+}
+
+.sceneLineOne {
+  left: 62px;
+  top: 22px;
+}
+
+.sceneLineTwo {
+  right: 34px;
+  bottom: 20px;
+
+  opacity: .48;
+}
+
+
+/* ---------------------------------------------------------
+   Frosted Glass track
+   Official demo-style parameters live in ProjectGallery.tsx.
+   --------------------------------------------------------- */
+
+.galleryFrostedTrack {
+  position: absolute;
+
+  inset: 3px;
+
+  z-index: 1;
+
+  border-radius: 999px;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   Dark Glass active thumb
+   Official demo-style parameters live in ProjectGallery.tsx.
+   --------------------------------------------------------- */
+
+.galleryDarkThumb {
+  position: absolute;
+
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+
+  z-index: 2;
+
+  width: calc(50% - 4px);
+
+  border-radius: 999px;
+
+  pointer-events: none;
+
+  transform: translate3d(0, 0, 0);
+
+  transition:
+    transform 650ms
+    cubic-bezier(.22, 1, .36, 1);
+}
+
+.galleryGlassRoot.is-second
+.galleryDarkThumb {
+  transform:
+    translate3d(100%, 0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   Text / hit targets stay outside WebGL canvases
+   --------------------------------------------------------- */
+
+.gallerySwitchControls {
+  position: absolute;
+
+  inset: 4px;
+
+  z-index: 4;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  border-radius: 999px;
+}
+
+.gallerySwitchButton {
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: rgba(238,246,242,.74);
+
+  font: inherit;
+
+  font-size: .68rem;
+  font-weight: 760;
+
+  letter-spacing: .09em;
+
+  text-shadow:
+    0 1px 8px rgba(4,11,9,.30);
+
+  cursor: pointer;
+
+  transition:
+    color 220ms ease,
+    transform 160ms ease,
+    text-shadow 220ms ease;
+}
+
+.gallerySwitchButton:hover {
+  color: #ffffff;
+}
+
+.gallerySwitchButton.is-active {
+  color: #ffffff;
+
+  text-shadow:
+    0 1px 10px rgba(0,0,0,.46);
+}
+
+.gallerySwitchButton:active {
+  transform: scale(.96);
+}
+
+
+/*
+After WebGL is ready, remove the CSS imitation so
+the library's shader becomes the real surface.
+*/
+.galleryGlassRoot.liquidglass-ready
+.galleryFrostedTrack,
+.galleryGlassRoot.liquidglass-ready
+.galleryDarkThumb {
+  background: rgba(255,255,255,.01);
+
+  border-color: transparent;
+
+  box-shadow: none;
+}
+
+
+/*
+Graceful fallback for WebGL/init failure.
+*/
+.galleryGlassRoot.liquidglass-fallback
+.galleryFrostedTrack,
+.galleryGlassRoot.liquidglass-fallback
+.galleryDarkThumb {
+  backdrop-filter:
+    blur(18px)
+    saturate(145%);
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(145%);
+}
+
+
+@media (max-width: 760px) {
+  .galleryProject {
+    padding: 27px;
+  }
+
+  .galleryProject h3 {
+    font-size:
+      clamp(2rem, 10vw, 3.2rem);
+  }
+
+  .projectGalleryViewport {
+    border-radius: 22px;
+  }
+
+  .galleryGlassRoot {
+    width: 190px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 560px) {
+  .galleryProject {
+    padding: 22px;
+  }
+
+  .projectGallery {
+    margin-top: 24px;
+  }
+
+  .projectGalleryViewport {
+    margin-left: -4px;
+    margin-right: -4px;
+
+    width: calc(100% + 8px);
+  }
 }

@@ -1,3 +1,5 @@
+import ProjectGallery from "./components/ProjectGallery";
+
 const experience = [
   {
     eyebrow: "2022 — Aug 2026",
@@ -283,22 +285,41 @@ export default function Home() {
             </article>
 
             <div className="secondaryProjects">
-              <article className="glassSurface miniProject">
+              <article className="glassSurface miniProject projectWide">
                 <span className="projectOrdinal">02</span>
+
                 <h3>Cloud-Native Task App</h3>
+
                 <p>
                   Full-stack FastAPI application moved from local Docker development
                   to Cloud Run with persistent Cloud SQL PostgreSQL.
                 </p>
               </article>
 
-              <article className="glassSurface miniProject">
+              <article className="glassSurface miniProject projectWide galleryProject">
                 <span className="projectOrdinal">03</span>
-                <h3>AI Daily Brief & Quiz</h3>
-                <p>
-                  n8n workflow that turns AI news into concise learning briefs and
-                  quiz questions with Gemini-powered automation.
-                </p>
+
+                <div className="galleryProjectIntro">
+                  <h3>AI Daily Brief & Quiz</h3>
+
+                  <p>
+                    n8n workflow that turns AI news into concise learning briefs
+                    and quiz questions with Gemini-powered automation.
+                  </p>
+                </div>
+
+                <ProjectGallery
+                  images={[
+                    {
+                      src: "/projects/n8n-workflow.png",
+                      alt: "AI Daily Brief n8n workflow",
+                    },
+                    {
+                      src: "/projects/n8n-result.png",
+                      alt: "AI Daily Brief generated output",
+                    },
+                  ]}
+                />
               </article>
             </div>
           </section>
