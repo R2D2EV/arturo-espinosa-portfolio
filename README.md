@@ -1,50 +1,124 @@
-# Arturo Espinosa Vargas — Portfolio V2
+🚀 Arturo Espinosa Vargas — Portfolio
 
-Personal portfolio built with Next.js + TypeScript.
+Personal Software Engineering portfolio focused on Artificial Intelligence, Cloud Computing, and modern software development.
 
-## Design direction
+The website presents my professional experience, technical skills, certifications, and selected engineering projects.
 
-- Light, minimal overall composition
-- Graphite / space-green visual language
-- Real liquid-glass effect on sticky navigation and contact rail using `liquid-gl`
-- CSS glass fallback and glass treatment on larger content panels
-- Subtle star field in the About section
-- RAG Anywhere presented with a real architecture visual instead of an abstract row of boxes
-- Certification cards use brand-color company logos
+👨‍💻 About Me
 
-The liquid-glass treatment is based on the open-source `liquidGL` project by NaughtyDuk (MIT licensed):
-https://github.com/naughtyduk/liquidGL
+I am a Physics graduate and Software Engineer focused on building systems related to:
 
-## Run locally
+🤖 Artificial Intelligence
+🧠 Generative AI
+☁️ Cloud Computing
+🏗️ Software Architecture
+⚙️ CI/CD
+🐍 Python
 
-```bash
+My main professional goal is to continue developing toward Senior / Lead AI Engineering roles, particularly in cloud-native AI systems.
+
+🛠️ Tech Stack
+
+The portfolio is built with:
+
+▲ Next.js
+⚛️ React
+🔷 TypeScript
+🎨 CSS
+✨ liquid-gl
+☁️ Vercel
+🌟 Featured Work
+
+The portfolio includes projects and experience related to:
+
+🤖 Artificial Intelligence and Machine Learning
+📚 Retrieval-Augmented Generation
+🧠 Generative AI
+☁️ Google Cloud Platform
+🐳 Containers and Cloud-native applications
+⚙️ CI/CD
+🏗️ Software Architecture
+🧠 Featured Project — RAG Anywhere
+
+The main featured project is RAG Anywhere, a multilingual Retrieval-Augmented Generation system designed with a production-oriented architecture.
+
+The system includes concepts such as:
+
+Documents
+    ↓
+Chunking
+    ↓
+Embeddings
+    ↓
+Vector Search
+    ↓
+Relevance Gating
+    ↓
+LLM
+    ↓
+Grounded Answer + Citations
+
+Some of the project's main characteristics include:
+
+🌎 Multilingual retrieval
+🔎 Semantic search
+📚 RAG architecture
+📌 Grounded answers with citations
+🚫 Deterministic abstention
+📊 Retrieval evaluation
+🧪 Automated tests
+🏗️ Hexagonal architecture
+☁️ Google Cloud deployment
+⚙️ CI/CD
+
+The main source repository is currently private, while its architecture and technical overview are presented publicly through this portfolio.
+
+💻 Running Locally
+
+Install dependencies:
+
 npm install
+
+Start the development server:
+
 npm run dev
-```
 
 Open:
 
-```text
 http://localhost:3000
-```
 
-## Public assets
+Create a production build:
 
-- `public/arturo-espinosa.png`
-- `public/arturo-espinosa-resume.pdf`
-- `public/arturo-espinosa-cv.pdf`
-- `public/projects/rag-anywhere-architecture.png`
+npm run build
+📁 Repository Structure
+app/       Next.js application
+public/    Public assets, project images, CV and resume
+types/     TypeScript definitions
+☁️ Deployment
 
-The RAG Anywhere source repository remains private; the portfolio states that source is available on request.
+The portfolio is designed to be deployed using Vercel.
 
-## Deploy to Vercel
+The general deployment flow is:
 
-Push this project to the public portfolio repository and import it into Vercel as a Next.js project.
+GitHub
+   ↓
+Vercel
+   ↓
+Next.js Build
+   ↓
+Production Deployment
+🎯 Current Focus
 
+My current technical focus includes:
 
-## V3 refinements
+🤖 AI Engineering
+🧠 LLM applications
+📚 RAG systems
+☁️ Google Cloud
+🏗️ AI system architecture
+⚙️ MLOps and CI/CD
+👨‍💻 Author
 
-- Removed technology chips from the two secondary project cards.
-- Added a custom analytics + ETL visual to the Solera experience card.
-- Added a subtle UNAM-inspired academic watermark to the Faculty of Sciences card.
-- Preserved the existing page layout, card sizing, grid distribution and visual hierarchy.
+Arturo Espinosa Vargas
+
+Physics graduate and Software Engineer focused on AI Engineering and Cloud Computing.
